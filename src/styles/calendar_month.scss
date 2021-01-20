@@ -1,0 +1,37 @@
+@import "variables";
+
+$months: 28, 29, 30, 31;
+
+@each $month in $months {
+  @for $i from 1 through $month {
+    .calendar-#{$month} div:nth-child(#{$i}) {
+      @include main-box;
+      margin: 1px;
+      cursor: pointer;
+
+      &::before {
+        content: "#{$i}";
+        display: block;
+        font-family: Arial, sans-serif;
+        font-size: 30px;
+        text-align: center;
+        line-height: 100px;
+      }
+
+      &:hover {
+        position: relative;
+        background-color: pink;
+        animation: 0.5s my-move;
+      }
+    }
+  }
+}
+
+@keyframes my-move {
+  from {
+    top: 0;
+  }
+  to {
+    top: -20px;
+  }
+}

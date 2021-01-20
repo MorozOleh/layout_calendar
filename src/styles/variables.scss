@@ -1,0 +1,8 @@
+@mixin main-box {
+  width: 100px;
+  height: 100px;
+  background-color: #eee;
+}
+
+$box-with-margin: 102px;
+$count-days: 7;

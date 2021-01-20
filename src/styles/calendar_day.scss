@@ -1,0 +1,16 @@
+@import "./variables";
+
+$days: (
+  "tue": $box-with-margin,
+  "wed": $box-with-margin * 2,
+  "thu": $box-with-margin * 3,
+  "fri": $box-with-margin * 4,
+  "sat": $box-with-margin * 5,
+  "sun": $box-with-margin * 6,
+);
+
+@each $day, $margin in $days {
+  .calendar-#{$day} div:first-child {
+    margin-left: #{$margin};
+  }
+}
