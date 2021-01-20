@@ -7,7 +7,8 @@ $months: 28, 29, 30, 31;
     .calendar-#{$month} div:nth-child(#{$i}) {
       position: relative;
       @include main-box;
-      margin: 1px;
+      margin-right: 1px;
+      margin-bottom: 1px;
       top: 0;
       transition: all 0.5s ease-out;
 
