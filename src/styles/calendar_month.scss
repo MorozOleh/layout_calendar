@@ -5,9 +5,11 @@ $months: 28, 29, 30, 31;
 @each $month in $months {
   @for $i from 1 through $month {
     .calendar-#{$month} div:nth-child(#{$i}) {
+      position: relative;
       @include main-box;
       margin: 1px;
-      cursor: pointer;
+      top: 0;
+      transition: all 0.5s ease-out;
 
       &::before {
         content: "#{$i}";
@@ -19,19 +21,10 @@ $months: 28, 29, 30, 31;
       }
 
       &:hover {
-        position: relative;
         background-color: pink;
-        animation: 0.5s my-move;
+        cursor: pointer;
+        top: -20px;
       }
     }
-  }
-}
-
-@keyframes my-move {
-  from {
-    top: 0;
-  }
-  to {
-    top: -20px;
   }
 }

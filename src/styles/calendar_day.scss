@@ -2,11 +2,11 @@
 
 $days: (
   "tue": $box-with-margin,
-  "wed": $box-with-margin * 2,
-  "thu": $box-with-margin * 3,
-  "fri": $box-with-margin * 4,
-  "sat": $box-with-margin * 5,
-  "sun": $box-with-margin * 6,
+  "wed": $box-with-margin * 2 + 1,
+  "thu": $box-with-margin * 3 + 1,
+  "fri": $box-with-margin * 4 + 1,
+  "sat": $box-with-margin * 5 + 1,
+  "sun": $box-with-margin * 6 + 1,
 );
 
 @each $day, $margin in $days {
