@@ -1,12 +1,41 @@
 @import "variables";
 
 .calendar {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+
   display: flex;
+  margin: auto;
   flex-wrap: wrap;
   flex-direction: row;
   width: $box-with-margin * $count-days;
+  gap: 1px;
+
+  & > div {
+    display: none;
+    @include main-box;
+
+    // margin-right: 1px;
+    // margin-bottom: 1px;
+
+    position: relative;
+    top: 0;
+
+    transition: all 0.5s ease-out;
+
+    &::before {
+      display: block;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    &:hover {
+      top: -20px;
+
+      background-color: pink;
+      cursor: pointer;
+    }
+  }
 }

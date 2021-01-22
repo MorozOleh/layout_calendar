@@ -3,29 +3,15 @@
 $months: 28, 29, 30, 31;
 
 @each $month in $months {
+  .calendar-#{$month} div:nth-child(-n + #{$month}) {
+    display: block;
+  }
+}
+
+@each $month in $months {
   @for $i from 1 through $month {
-    .calendar-#{$month} div:nth-child(#{$i}) {
-      position: relative;
-      @include main-box;
-      margin-right: 1px;
-      margin-bottom: 1px;
-      top: 0;
-      transition: all 0.5s ease-out;
-
-      &::before {
-        content: "#{$i}";
-        display: block;
-        font-family: Arial, sans-serif;
-        font-size: 30px;
-        text-align: center;
-        line-height: 100px;
-      }
-
-      &:hover {
-        background-color: pink;
-        cursor: pointer;
-        top: -20px;
-      }
+    .calendar-#{$month} div:nth-child(#{$i})::before {
+      content: "#{$i}";
     }
   }
 }
